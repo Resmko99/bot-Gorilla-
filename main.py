@@ -2,7 +2,7 @@ import telebot
 import asyncio
 import time
 from telebot import types
-bot = telebot.TeleBot("6229862030:AAFrhAkX4qyYHOxQjDfpBEaHH71Mzixq-iI")
+bot = telebot.TeleBot("**********")
 
 nick = []
 money = 1
@@ -56,7 +56,7 @@ def bot_message(message):
         global money_user
 
         if message.text == 'Магазин':
-            n = open('C:\личное\Bot_Telegram\photo\Магазин.jpg', 'rb')
+            n = open('Магазин.jpg', 'rb')
             bot.send_photo(message.chat.id,photo= n,caption='\n=========================='
                                              '\n'
                                              '\nАксессуары для вашей Гориллы:'
@@ -82,33 +82,33 @@ def bot_message(message):
         if message.text == 'Банан🍌':
             telegram_id = str(message.from_user.id)
             if money >= 10:
-                n = open('C:\личное\Bot_Telegram\photo\На покупку банана.jpg','rb')
+                n = open('На покупку банана.jpg','rb')
                 bot.send_photo(message.chat.id, photo=n,caption='Банан🍌 успешно приобретена.')
                 aksesuar.append('Банан🍌')
                 money -= 10
                 banan *= 2
                 doxod += 1
             else:
-                n = open('C:\личное\Bot_Telegram\photo\На покупку банана.jpg','rb')
+                n = open('На покупку банана.jpg','rb')
                 bot.send_photo(message.chat.id, photo=n, caption='К сожалению у вас не хватает средств💵 на покупку данного замечательного артефакта😭.')
 
 
-        if message.text == 'Палка🪵':
+        elif message.text == 'Палка🪵':
             telegram_id = str(message.from_user.id)
             if money >= 200:
-                n = open('C:\личное\Bot_Telegram\photo\Палка.jpg', 'rb')
+                n = open('Палка.jpg', 'rb')
                 bot.send_photo(message.chat.id, photo=n, caption='Палка🪵 успешно приобретена.')
                 aksesuar.append('Палка🪵')
                 money -=200
                 doxod += 10
             else:
-                n = open('C:\личное\Bot_Telegram\photo\Палка.jpg', 'rb')
+                n = open('Палка.jpg', 'rb')
                 bot.send_photo(message.chat.id, photo=n, caption='К сожалению у вас не хватает средств💵 на покупку данного замечательного артефакта😭.')
 
-        if message.text == 'Золотой банан🌙':
+        elif message.text == 'Золотой банан🌙':
             telegram_id = str(message.from_user.id)
             if money >= 15000:
-                n = open('C:\личное\Bot_Telegram\photo\На золотой банан.jpg', 'rb')
+                n = open('На золотой банан.jpg', 'rb')
                 bot.send_photo(message.chat.id, photo=n, caption='Золотой банан🌙 успешно приобретен.')
                 aksesuar.append('Золотой банан🌙')
                 money -=15000
@@ -117,73 +117,73 @@ def bot_message(message):
                 n = open('C:\личное\Bot_Telegram\photo\На золотой банан.jpg','rb')
                 bot.send_photo(message.chat.id, photo=n, caption='К сожалению у вас не хватает средств💵 на покупку данного замечательного артефакта😭.')
 
-        if message.text == 'Пальма с бананами🌴🍌':
+        elif message.text == 'Пальма с бананами🌴🍌':
             telegram_id = str(message.from_user.id)
             if money <= 100000:
-                n = open('C:\личное\Bot_Telegram\photo\пальма с бананами.jpg',
+                n = open('пальма с бананами.jpg',
                          'rb')
                 bot.send_photo(message.chat.id, photo=n,caption='Пальма с бананами🌴🍌успешно приобретена.')
                 aksesuar.append('Пальма с бананами🌴🍌')
                 money += 100000
                 doxod += 1000
             else:
-                n = open('C:\личное\Bot_Telegram\photo\пальма с бананами.jpg', 'rb')
+                n = open('пальма с бананами.jpg', 'rb')
                 bot.send_photo(message.chat.id, photo=n, caption='К сожалению у вас не хватает средств💵 на покупку данного замечательного артефакта😭.')
 
-        if message.text == 'Энергия горилы':
+        elif message.text == 'Энергия горилы':
             telegram_id = str(message.from_user.id)
             if money >= 500:
-                n = open('C:\личное\Bot_Telegram\photo\Аксессуар кофе.jpg', 'rb')
+                n = open('Аксессуар кофе.jpg', 'rb')
                 bot.send_photo(message.chat.id, photo=n, caption='Вы успешно купили горилу')
                 money -= 500
                 doxod *= 1.25
             else:
-                n = open('C:\личное\Bot_Telegram\photo\Аксессуар кофе.jpg', 'rb')
+                n = open('Аксессуар кофе.jpg', 'rb')
                 bot.send_photo(message.chat.id, photo=n, caption='К сожалению у вас не хватает средств💵 на покупку данного замечательного артефакта😭')
 
-        if message.text == 'Самка горилы':
+        elif message.text == 'Самка горилы':
             telegram_id = str(message.from_user.id)
             if money >= 100000:
-                n = open('C:\личное\Bot_Telegram\photo\самка.jpg','rb')
+                n = open('самка.jpg','rb')
                 bot.send_photo(message.chat.id, photo=n, caption='Самка успешно приобретена')
                 money -= 100000
                 doxod*= 2
             else:
-                n = open('C:\личное\Bot_Telegram\photo\самка.jpg', 'rb')
+                n = open('самка.jpg', 'rb')
                 bot.send_photo(message.chat.id, photo=n, caption='К сожалению у вас не хватает средств💵 на покупку данного замечательного артефакта😭')
         if message.text == 'назад🔙':
             menu(message)
 
-        if message.text == 'Покормить Гориллу🍽':
-            n = open('C:\личное\Bot_Telegram\photo\Покормить гориллу.jpg', 'rb')
+        elif message.text == 'Покормить Гориллу🍽':
+            n = open('Покормить гориллу.jpg', 'rb')
             bot.send_photo(message.chat.id, photo=n,caption='Ваша горилла теперь сыта🙊.\nВы можете играть с ней!')
             eda = 100000
 
 
-        if message.text == 'Поиграть с гориллой⚽':
-               n = open('C:\личное\Bot_Telegram\photo\Если горилла голодает.jpg','rb')
+        elif message.text == 'Поиграть с гориллой⚽':
+               n = open('Если горилла голодает.jpg','rb')
                bot.send_photo(message.chat.id, photo=n)
                bot.send_message(message.chat.id,'Ваша Горилла голодна🙊, покормите ее!!!') #Вывод ошибки в случае, если энергия закончилась.
                time.sleep(5)
            else:
-                n = open('C:\личное\Bot_Telegram\photo\Поиграть с гориллой.jpg','rb')
+                n = open('Поиграть с гориллой.jpg','rb')
                 bot.send_photo(message.chat.id, photo=n, caption= f'Вы успешно поиграли с Гориллой, она слегка улыбается 🐒\nВам начисленно {doxod}💎, всего у вас {money} 💎')
                 money += doxod
 
 
-        if message.text == 'Профиль🐵':
+        elif message.text == 'Профиль🐵':
             dlina = len(aksesuar)
-            n = open('C:\личное\Bot_Telegram\photo\На профиль.jpg', 'rb')
+            n = open('На профиль.jpg', 'rb')
             bot.send_photo(message.chat.id, photo=n,caption=f'Ваш рейтинг в игре: {money}\nВаши аксессуары:{dlina}')
 
         elif message.text == 'Помощь':
-            n = open('C:\личное\Bot_Telegram\photo\Помощь.jpg', 'rb')
+            n = open('Помощь.jpg', 'rb')
             bot.send_photo(message.chat.id, photo=n, caption='Информация о боте:\n1.Нажимая на кнопку поиграть с Гориллой⚽ вы получаете рейтинг🏆 и деньги💎.'
                                              '\n\n2.Ваши деньги = вашему рейтингу, чем вы богаче, тем вы успешнее.'
                                              '\n\n3.В профиле вы можете увидеть ваш рейтинг и деньги, а так же аксессуары, которые у вас есть🐵.'
                                              '\n\n4.Для увеличения вашего дохода вы можете купить аксессуары для вашей Гориллы.'
                                              '\n\n5.Для игры с Гориллой вам нужно ее кормить🍽.')
-
+        else: bot.send_message(message.chat.id,'Такой команды нет, возможно вы ввели ее неправильно, или  попробуйте ввести другую')
         while time.time() == True:
             eda -= 1
 
